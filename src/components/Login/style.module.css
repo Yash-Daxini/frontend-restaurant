@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginDiv {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  width: 500px;
+  height: 500px;
+}
+
+.loginDiv .title {
+  color: #101010;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.loginDiv .description {
+  color: #878787;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.loginDiv form {
+  width: 100%;
+  margin-top: 50px;
+  position: relative;
+}
+
+.loginDiv form .inputDiv {
+  width: 100%;
+  position: relative;
+}
+
+.loginDiv .passwordVisibilityBtn {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  bottom: 60%;
+  right: 10px;
+}
+
+.loginDiv form .signInBtn {
+  width: 100%;
+  border-radius: 40px;
+  background-color: #fe8c00;
+  cursor: pointer;
+}
+
+.loginDiv .signInOptionDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loginDiv .signInOptionDiv span{
+  color: #878787;
+  font-size: 14px;
+}
+
+.horizontalLine{
+  width: 38%;
+  height: 1px;
+  background-color: #878787;
+  margin: 10px 5px;
+}
+.googleSignInOption{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.googleSignInOption img{  
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  border : 1px solid #D6D6D6;
+  border-radius:50% ;
+  cursor: pointer;
+}
+.registerDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registerLink{
+  color: #fe8c00;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+  cursor : pointer;
+}
