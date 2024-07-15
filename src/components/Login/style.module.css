@@ -14,7 +14,7 @@ body {
   gap: 10px;
   margin-top: 15px;
   width: 500px;
-  height: 500px;
+  min-height: 500px;
 }
 
 .loginDiv .title {
@@ -48,15 +48,8 @@ body {
   cursor: pointer;
   font-size: 20px;
   position: absolute;
-  bottom: 60%;
   right: 10px;
-}
-
-.loginDiv form .signInBtn {
-  width: 100%;
-  border-radius: 40px;
-  background-color: #fe8c00;
-  cursor: pointer;
+  top: 57%;
 }
 
 .loginDiv .signInOptionDiv {
@@ -67,43 +60,43 @@ body {
   margin: 20px 0;
 }
 
-.loginDiv .signInOptionDiv span{
+.loginDiv .signInOptionDiv span {
   color: #878787;
   font-size: 14px;
 }
 
-.horizontalLine{
+.horizontalLine {
   width: 38%;
   height: 1px;
   background-color: #878787;
   margin: 10px 5px;
 }
-.googleSignInOption{
+.googleSignInOption {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.googleSignInOption img{  
+.googleSignInOption img {
   width: 40px;
   height: 40px;
   font-size: 14px;
-  border : 1px solid #D6D6D6;
-  border-radius:50% ;
+  border: 1px solid #d6d6d6;
+  border-radius: 50%;
   cursor: pointer;
 }
-.registerDiv{
+.registerDiv {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.registerLink{
+.registerLink {
   color: #fe8c00;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   margin-left: 5px;
-  cursor : pointer;
+  cursor: pointer;
 }

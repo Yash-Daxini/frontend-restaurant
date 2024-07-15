@@ -1,6 +1,9 @@
 import styles from "./style.module.css";
 import { useState } from "react";
 import googleLogo from "../../assets/Images/GoogleLogo.jpg";
+import FormInput from "../FormInput" ; 
+import FormBtn from "../FormButton" ;
+import { Link } from "react-router-dom";  
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,38 +20,20 @@ const Login = () => {
         Please sign in to your account
       </span>
       <form>
-        <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">
-            Email Address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Password</label>
-          <input
-            type={passwordVisible ? "text" : "password"}
-            className="form-control"
-            id="exampleInputPassword1"
-          />
-          <button
-            className={`${styles.passwordVisibilityBtn}`}
-            onClick={(event) => togglePasswordVisibility(event)}
-          >
-            {!passwordVisible ? (
-              <ion-icon name="eye-off-outline"></ion-icon>
-            ) : (
-              <ion-icon name="eye-outline"></ion-icon>
-            )}
-          </button>
-        </div>
-        <button type="submit" className={`btn btn-primary ${styles.signInBtn}`}>
-          Sign In
+        <FormInput labelValue={"Email Address"} inputType={"email"} />
+        <FormInput labelValue={"Password"} inputType={passwordVisible ? "text" : "password"} />
+
+        <button
+          className={`${styles.passwordVisibilityBtn}`}
+          onClick={(event) => togglePasswordVisibility(event)}
+        >
+          {!passwordVisible ? (
+            <ion-icon name="eye-off-outline"></ion-icon>
+          ) : (
+            <ion-icon name="eye-outline"></ion-icon>
+          )}
         </button>
+        <FormBtn buttonValue={"Log in"}  />
       </form>
       <div className={`${styles.signInOptionDiv}`}>
         <span className={`${styles.horizontalLine}`} />
@@ -60,7 +45,7 @@ const Login = () => {
       </div>
       <div className={`${styles.registerDiv}`}>
         <span>Don't have an account?</span>
-        <span className={`${styles.registerLink}`}>Register</span>
+        <Link to="/signup" className={`${styles.registerLink}`}>Register</Link>
       </div>
     </div>
   );
