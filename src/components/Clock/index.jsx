@@ -6,11 +6,11 @@ const Clock = ({ speed }) => {
   const endTime = useRef(new Date());
 
   useEffect(() => {
-    endTime.current.setHours(endTime.current.getHours() - 2);
+    endTime.current.setHours(time.getHours() - 2);
 
     const interval = setInterval(() => {
       const now = new Date();
-      const timeLeft = endTime.current - now;
+      const timeLeft = now - endTime.current;
 
       if (timeLeft <= 0) {
         clearInterval(interval);
@@ -21,26 +21,32 @@ const Clock = ({ speed }) => {
     }, 1000 / speed);
 
     return () => clearInterval(interval);
-  }, [speed]);
+  }, [speed,time]);
 
-  const hours = ((time.getHours() % 12) / 12) * 360 - 90;
-  const minutes = (time.getMinutes() / 60) * 360 - 90;
-  const seconds = (time.getSeconds() / 60) * 360 - 90;
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+
+  let hour_rotation = 30 * hours + minutes / 2;
+  let minute_rotation = 6 * minutes;
+  let second_rotation = 6 * seconds;
 
   return (
-    <div className={`${styles.clock}`}>
-      <div
-        className={`${styles.hand} ${styles.hour}`}
-        style={{ transform: `rotate(${hours}deg)` }}
-      ></div>
-      <div
-        className={`${styles.hand} ${styles.minute}"`}
-        style={{ transform: `rotate(${minutes}deg)` }}
-      ></div>
-      <div
-        className={`${styles.hand} ${styles.second}`}
-        style={{ transform: `rotate(${seconds}deg)` }}
-      ></div>
+    <div className={`${styles.clockDiv}`}>
+      <div className={`${styles.clock}`}>
+        <div
+          className={`${styles.hand} ${styles.hour}`}
+          style={{ transform: `rotate(${hour_rotation}deg)` }}
+        ></div>
+        <div
+          className={`${styles.hand} ${styles.minute}`}
+          style={{ transform: `rotate(${minute_rotation}deg)` }}
+        ></div>
+        <div
+          className={`${styles.hand} ${styles.second}`}
+          style={{ transform: `rotate(${second_rotation}deg)` }}
+        ></div>
+      </div>
     </div>
   );
 };

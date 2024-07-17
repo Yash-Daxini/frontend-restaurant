@@ -43,13 +43,13 @@ body {
 }
 
 .loginDiv .passwordVisibilityBtn {
-  background-color: #fff;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 20px;
   position: absolute;
-  right: 10px;
-  top: 57%;
+  right:0;
+  top: 46%;
 }
 
 .loginDiv .signInOptionDiv {

@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Clock from "../Clock";
+import styles from "./style.module.css";
 
 const TrackScreen = () => {
   const history = useNavigate();
@@ -29,13 +30,13 @@ const TrackScreen = () => {
       <div className="controls">
         <input
           type="range"
-          min="0.1"
+          min="1"
           max="5"
-          step="0.1"
+          step="1"
           value={speed}
           onChange={handleSliderChange}
         />
-        <button onClick={handleShare}>Share</button>
+        <button className={`${styles.shareBtn}`} onClick={handleShare}>Share</button>
       </div>
     </div>
   );
