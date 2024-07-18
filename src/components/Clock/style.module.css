@@ -1,3 +1,16 @@
+.trackerDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.messageDiv {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
 .clockDiv {
   display: flex;
   justify-content: center;

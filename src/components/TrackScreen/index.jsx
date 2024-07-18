@@ -1,27 +1,13 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Clock from "../Clock";
 import styles from "./style.module.css";
+import { RWebShare } from "react-web-share";
 
 const TrackScreen = () => {
-  const history = useNavigate();
-  const location = useLocation();
   const [speed, setSpeed] = useState(1);
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const savedSpeed = parseFloat(params.get("speed"));
-    if (savedSpeed) setSpeed(savedSpeed);
-  }, [location.search]);
 
   const handleSliderChange = (e) => {
     setSpeed(e.target.value);
-  };
-
-  const handleShare = () => {
-    const url = new URL(window.location);
-    url.searchParams.set("speed", speed);
-    history.push(url.toString());
   };
 
   return (
@@ -31,12 +17,21 @@ const TrackScreen = () => {
         <input
           type="range"
           min="1"
-          max="5"
+          max="100"
           step="1"
           value={speed}
           onChange={handleSliderChange}
         />
-        <button className={`${styles.shareBtn}`} onClick={handleShare}>Share</button>
+        <RWebShare
+          data={{
+            text: "Share Screen Tracker",
+            url: "https://react-assignment-yash.netlify.app/trackScreen",
+            title: "Tracker screen",
+          }}
+          onClick={() => console.log("shared successfully!")}
+        >
+          <button className={`${styles.shareBtn}`}>Share</button>
+        </RWebShare>
       </div>
     </div>
   );
